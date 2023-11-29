@@ -1,0 +1,25 @@
+.container {
+  border: 1px solid #000;
+  width: 700px;
+  height: auto;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.submit-button,
+.reset-button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.reset-button {
+  background-color: #f44336;
+}
