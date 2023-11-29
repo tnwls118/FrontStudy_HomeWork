@@ -1,54 +1,85 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지원서</title>
+    <link rel="stylesheet" href="css.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지원서</title>
-  <link rel="stylesheet" href="css.css">
+  <body>
+    <div class="container">
+      <h2>프런트엔드 개발자 지원서</h2>
+      <p>
+        HTML, CSS 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을 찾습니다.
+      </p>
+      <hr />
+      <p><strong>개인 정보</strong></p>
+      <ul>
+        <li>
+          <label for="name">이름</label>
+          <input
+            type="text"
+            id="name"
+            required
+            autofocus
+            placeholder="공백 없이 입력하세요"
+          />
+        </li>
+        <li>
+          <label for="number">연락처</label>
+          <input type="tel" id="number" required />
+        </li>
+      </ul>
+      <p><strong>지원 분야</strong></p>
+      <ul>
+        <li>
+          <label for="task1"
+            ><input type="radio" name="task" id="task1" />웹퍼블리싱</label
+          >
+        </li>
+        <li>
+          <label for="task2"
+            ><input type="radio" name="task" id="task2" />웹 애플리케이션
+            개발</label
+          >
+        </li>
+        <li>
+          <label for="task3"
+            ><input type="radio" name="task" id="task3" />개발 환경 개선</label
+          >
+        </li>
+      </ul>
+      <p><strong>지원 동기</strong></p>
+      <textarea
+        name="message"
+        id="message"
+        cols="100"
+        rows="10"
+        placeholder="본사 지원 동기를 간략히 써 주세요."
+        required
+      ></textarea>
+      <form action="/submit" method="post">
+        <input type="submit" value="접수하기" class="submit-button" /><input
+          type="reset"
+          value="다시 쓰기"
+          class="reset-button"
+        />
+      </form>
+    </div>
+  </body>
 
-</head>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // DOM이 로드된 후에 실행됩니다.
+      const form = document.querySelector("form");
+      const messageTextarea = document.getElementById("message");
 
-<body>
-  <div class="container">
-    <h2>프런트엔드 개발자 지원서</h2>
-    <p>HTML, CSS 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을 찾습니다.</p>
-    <hr>
-    <p><strong>개인 정보</strong></p>
-    <ul>
-      <li><label for="name">이름</label>
-        <input type="text" id="name" required autofocus placeholder="공백 없이 입력하세요">
-      </li>
-      <li><label for="number">연락처</label>
-        <input type="tel" id="number" required>
-      </li>
-    </ul>
-    <p><strong>지원 분야</strong></p>
-    <ul>
-      <li><label for="task1"><input type="radio" name="task" id="task1">웹퍼블리싱</label></li>
-      <li><label for="task2"><input type="radio" name="task" id="task2">웹 애플리케이션 개발</label></li>
-      <li><label for="task3"><input type="radio" name="task" id="task3">개발 환경 개선</label></li>
-    </ul>
-    <p><strong>지원 동기</strong></p>
-    <textarea name="message" id="message" cols="100" rows="10" placeholder="본사 지원 동기를 간략히 써 주세요." required></textarea>
-    <form action="/submit" method="post"><input type="submit" value="접수하기" class="submit-button"><input type="reset"
-        value="다시 쓰기" class="reset-button"></form>
-  </div>
-
-</body>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // DOM이 로드된 후에 실행됩니다.
-    const form = document.querySelector('form');
-    const messageTextarea = document.getElementById('message');
-
-    // 리셋 버튼 클릭 시 이벤트 처리
-    form.addEventListener('reset', function () {
-      // 초기값으로 리셋
-      messageTextarea.value = messageTextarea.defaultValue;
+      // 리셋 버튼 클릭 시 이벤트 처리
+      form.addEventListener("reset", function () {
+        // 초기값으로 리셋
+        messageTextarea.value = messageTextarea.defaultValue;
+      });
     });
-  });
-</script>
-
+  </script>
 </html>
